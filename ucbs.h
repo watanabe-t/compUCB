@@ -110,7 +110,7 @@ void setResults_nocomp(){
 			if(Rew[i].empty()){
 				UCB[i] = 0;
 			}else{
-				UCB[i] = hoge::getMean(Rew[i]) + sqrt(log(1+t)/Rew[i].size());
+				UCB[i] = hoge::getMean(Rew[i]) + sqrt(2*log(1+t)/Rew[i].size());
 			}
 		}
 
@@ -333,7 +333,7 @@ void setResults_withGL_ver1(){
 				for(int s = 0; s < t; ++s){
 					temp.push_back(1 - fabs(Y[i][s] - Votes[s]));
 				}
-				UCB[i] = hoge::getMean(temp) + sqrt(log(1+t)/t);
+				UCB[i] = hoge::getMean(temp) + sqrt(2*log(1+t)/t);
 			}
 		}
 
@@ -553,7 +553,7 @@ void setResults_withGL_ver2(){
 						temp.push_back(1 - fabs(Y[i][s] - Votes[s]));
 					}
 				}
-				UCB[i] = hoge::getMean(temp) + sqrt(log(1+t)/temp.size());
+				UCB[i] = hoge::getMean(temp) + sqrt(2*log(1+t)/temp.size());
 			}
 		}
 
